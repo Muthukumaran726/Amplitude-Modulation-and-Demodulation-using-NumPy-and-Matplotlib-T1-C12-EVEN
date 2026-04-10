@@ -19,6 +19,46 @@ Generate Message Signal: Define the message signal as a cosine wave.
 Generate Carrier Signal: Define the carrier signal as a cosine wave.
 Modulate Signal: Apply the AM formula to obtain the modulated signal.
 Plot the Signals: Use Matplotlib to plot the message signal, carrier signal, and modulated signal.
+
+Program:
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+Am=3.7
+fm=166
+fs=16600
+t=np.arange(0,2/fm,1/fs)
+m=Am*np.cos(2*np.pi*fm*t)
+plt.subplot(3,1,1)
+plt.plot(t,m)
+
+Ac=7.4
+fc=1660
+c=Ac*np.cos(2*np.pi*fc*t)
+plt.subplot(3,1,2)
+plt.plot(t,c)
+
+am=(Ac+m)*np.cos(2*np.pi*fc*t)
+plt.subplot(3,1,3)
+plt.plot(t,am)
+plt.show()
+
+
+```
+
+Tabulation:
+
+<img width="899" height="1599" alt="image" src="https://github.com/user-attachments/assets/afd051fb-ce89-49d6-86e0-b9426f50c54c" />
+
+
 Output:
 
+<img width="1198" height="704" alt="image" src="https://github.com/user-attachments/assets/8f3a9c12-0ba3-4255-be7a-62b899bb7997" />
+
 Result:
+
+Thus the amplitude modulation and demodulation is experimentally done and the output is verified.
+
